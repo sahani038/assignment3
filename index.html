@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SoundWave - Premium Headphones</title>
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f4f4f4;
+        }
+
+        img {
+            object-fit: scale-down;
+        }
+
+        header {
+            background-color: #2C3E50;
+            color: #fff;
+            padding: 1rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        header h1 {
+            font-size: 1.8rem;
+            flex: 1;
+        }
+
+        /* Toggle button for mobile */
+        .toggle-btn {
+            display: none;
+            font-size: 2.3rem;
+            cursor: pointer;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+        }
+
+        .nav-links a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 1.1rem;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: #E44D26;
+        }
+
+        main {
+            padding: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .product {
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .product:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+        }
+
+        .product img {
+            width: 100%;
+            height: 100px;
+            background: #fff;
+        }
+
+        .product h2 {
+            font-size: 1.2rem;
+            margin: 1rem;
+        }
+
+        .product p {
+            font-size: 0.9rem;
+            margin: 0 1rem 1rem;
+            color: #666;
+        }
+
+        .product .price {
+            display: block;
+            font-size: 1.2rem;
+            font-weight: bold;
+            margin: 0 1rem 1rem;
+            color: #e44d26;
+        }
+
+        footer {
+            background-color: #2C3E50;
+            color: #fff;
+            text-align: center;
+            padding: 2rem;
+            margin-top: 2rem;
+        }
+
+        .footer-content {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .footer-content div {
+            margin: 1rem;
+            min-width: 200px;
+        }
+
+        .footer-content h4 {
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
+        }
+
+        .social-icons {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+        }
+
+        .social-icons a {
+            color: #fff;
+            font-size: 1.5rem;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .social-icons a:hover {
+            color: #E44D26;
+        }
+
+        /* Media queries for responsive design */
+        @media (max-width: 1024px) {
+            header {
+                flex-direction: row;
+                align-items: flex-start;
+            }
+
+            header h1 {
+                margin-bottom: 1rem;
+            }
+
+            .product img {
+                height: 180px;
+            }
+        }
+
+        @media (max-width: 768px) {
+
+            /* Toggle button visible for smaller screens */
+            .toggle-btn {
+                display: block;
+            }
+
+            .nav-links {
+                display: none;
+                flex-direction: column;
+                width: 100%;
+            }
+
+            .nav-links.active {
+                display: flex;
+            }
+
+            .nav-links a {
+                padding: 1rem;
+                width: 100%;
+                text-align: left;
+                border-top: 1px solid #555;
+                border-bottom: 1px solid #555;
+            }
+
+            .product-grid {
+                gap: 1.5rem;
+            }
+
+            .product img {
+                height: 160px;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .nav-links {
+                flex-direction: row;
+                align-items: flex-start;
+                gap: 1rem;
+            }
+
+            .product-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .product img {
+                height: 150px;
+            }
+
+            .footer-content {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+
+        @media (min-width: 1200px) {
+            main {
+                padding: 2.5rem;
+            }
+
+            .product img {
+                height: 220px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>SoundWave</h1>
+        <!-- Toggle button for mobile -->
+        <i class="bx bx-menu toggle-btn"></i>
+        <nav>
+            <div class="nav-links">
+                <a href="#">Home</a>
+                <a href="#">Shop</a>
+                <a href="#">About</a>
+                <a href="#">Contact</a>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <h2>Explore Our Premium Headphones</h2>
+        <div class="product-grid">
+            <div class="product">
+                <img src="images/1.png" alt="">
+                <h2>Red Headphones</h2>
+                <span class="price">₹3,399</span>
+            </div>
+            <div class="product">
+                <img src="images/2.png" alt="">
+                <h2>Wireless Earbuds</h2>
+                <span class="price">₹2,200</span>
+            </div>
+            <div class="product">
+                <img src="images/7.png" alt="">
+                <h2>Gaming Headphones</h2>
+                <span class="price">₹9,999</span>
+            </div>
+            <div class="product">
+                <img src="images/3.png" alt="">
+                <h2>White Headphone</h2>
+                <span class="price">₹7,999</span>
+            </div>
+            <div class="product">
+                <img src="images/8.png" alt="">
+                <h2>Gaming Headphone with Mic</h2>
+                <span class="price">₹7,999</span>
+            </div>
+            <div class="product">
+                <img src="images/5.png" alt="">
+                <h2>Black Neckband</h2>
+                <span class="price">₹7,999</span>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div>
+                <h4>About SoundWave</h4>
+                <p>Your ultimate destination for premium headphones and audio equipment.</p>
+            </div>
+            <div>
+                <h4>Contact Us</h4>
+                <p>Email: support@soundwave.com</p>
+                <p>Phone: +123-456-7890</p>
+            </div>
+            <div>
+                <h4>Follow Us</h4>
+                <div class="social-icons">
+                    <a href="#"><i class='bx bxl-facebook'></i></a>
+                    <a href="#"><i class='bx bxl-twitter'></i></a>
+                    <a href="#"><i class='bx bxl-instagram'></i></a>
+                    <a href="#"><i class='bx bxl-linkedin'></i></a>
+                </div>
+            </div>
+        </div>
+        <p>&copy; 2024 SoundWave. All rights reserved.</p>
+    </footer>
+
+    <script>
+        // Toggle navigation menu for mobile view
+        document.querySelector('.toggle-btn').addEventListener('click', () => {
+            document.querySelector('.nav-links').classList.toggle('active');
+        });
+    </script>
+</body>
+
+</html>
